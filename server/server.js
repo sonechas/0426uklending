@@ -13,13 +13,13 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-const API_URL = process.env.TWENTY7TEC_API_URL || "https://api.twenty7tec.com/sourcing.svc?wsdl";
+const API_URL = process.env.TWENTY7TEC_API_URL;
 const LICENSE_KEY = process.env.TWENTY7TEC_LICENSE_KEY;
 const COMPANY_ID = process.env.TWENTY7TEC_COMPANY_ID;
 const SITE_ID = process.env.TWENTY7TEC_SITE_ID;
 const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
 
-//"https://script.google.com/macros/s/AKfycbzta_Y74BF7knB-PW5tH7I4euZgyyr6cEByCeTzVXeKWqHchSM93YpshJpB6gBk5LDRyw/exec";
+
 
 /**
  * ✅ Mortgage API Route (No changes made)
