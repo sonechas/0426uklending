@@ -176,6 +176,7 @@ const generateSoapRequestBody = (mortgageType, params, keys) => {
                 ${productTermPeriodFromMonths}
                 ${productTermPeriodToMonths}
                 ${GreenEcoProduct}
+                <tem:BestFiveEachLender>true</tem:BestFiveEachLender>
             </tem:Filters>
             ${brigingPaymentMethod}
             ${buyToLetPaymentMethod}
