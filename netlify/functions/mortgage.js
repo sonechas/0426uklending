@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
     const { mortgageType, params } = JSON.parse(event.body);
     
     // Environment variables from Netlify
-    const API_URL = process.env.TWENTY7TEC_API_URL || "https://api.twenty7tec.com/sourcing.svc?wsdl";
+    const API_URL = process.env.TWENTY7TEC_API_URL;
     const LICENSE_KEY = process.env.TWENTY7TEC_LICENSE_KEY;
     const COMPANY_ID = process.env.TWENTY7TEC_COMPANY_ID;
     const SITE_ID = process.env.TWENTY7TEC_SITE_ID;
