@@ -146,9 +146,9 @@ const generateSoapRequestBody = (mortgageType, params, keys) => {
            <tem:input>
               <tem:CompanyId>${COMPANY_ID}</tem:CompanyId>
               <tem:SiteId>${SITE_ID}</tem:SiteId>
-              <tem:ExpectedValuation>${params.expectedValuation || 0}</tem:ExpectedValuation>
+              <tem:ExpectedValuation>${params.propertyValue || params.expectedValuation || 0}</tem:ExpectedValuation>
               <tem:LoanRequired>${params.loanRequired || 0}</tem:LoanRequired>
-              <tem:ReasonForMortgage>${params.loanTypex || "Purchase"}</tem:ReasonForMortgage>
+              <tem:ReasonForMortgage>${params.loanType || params.loanTypex || "Purchase"}</tem:ReasonForMortgage>
               <tem:MortgageType>${mortgageType}</tem:MortgageType>
               <tem:Term>${params.termMonths || 0}</tem:Term>
               <tem:TermUnit>${params.termUnit || "Years"}</tem:TermUnit>
