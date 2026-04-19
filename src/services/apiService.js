@@ -20,7 +20,8 @@ export const fetchMortgageData = async (mortgageType, params, onProgress) => {
     const response = await axios.post(NODE_API_URL, { mortgageType, params }, config);
     return response.data;
   } catch (error) {
+    const errorMsg = error.response?.data?.error || "Failed to fetch mortgage data";
     console.error(`Error fetching ${mortgageType} mortgage data:`, error);
-    throw new Error("Failed to fetch mortgage data");
+    throw new Error(errorMsg);
   }
 };

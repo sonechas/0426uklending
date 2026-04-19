@@ -22,12 +22,17 @@ exports.handler = async (event, context) => {
         SITE_ID
     });
 
+    console.log(`🚀 Starting ${mortgageType} search...`);
+
     const response = await axios.post(API_URL, requestBody, {
+      timeout: 9000, // 9 seconds timeout to catch it before Netlify's 10s limit
       headers: {
         "Content-Type": "text/xml;charset=UTF-8",
         "SOAPAction": "http://tempuri.org/ISourcing/RunSource"
       }
     });
+
+    console.log("✅ API Response received!");
 
     const parsedData = await parseXmlResponse(response.data);
     
@@ -35,15 +40,29 @@ exports.handler = async (event, context) => {
       statusCode: 200,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // Allow CORS
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(parsedData),
     };
   } catch (error) {
-    console.error("❌ Mortgage API Error:", error);
+    console.error("❌ Mortgage API Error:", error.message);
+    
+    let errorMessage = "Failed to fetch mortgage data";
+    if (error.code === 'ECONNABORTED') {
+      errorMessage = "The search took too long (more than 9 seconds). Please try again with more specific filters.";
+    }
+
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Failed to fetch mortgage data", details: error.message }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({ 
+        error: errorMessage, 
+        details: error.message,
+        isTimeout: error.code === 'ECONNABORTED'
+      }),
     };
   }
 };
