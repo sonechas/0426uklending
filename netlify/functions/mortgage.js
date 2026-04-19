@@ -34,15 +34,22 @@ exports.handler = async (event, context) => {
 
     console.log("✅ API Response received!");
 
-    const parsedData = await parseXmlResponse(response.data);
+    const fullData = await parseXmlResponse(response.data);
     
+    // Extract only the actual products to save memory and time
+    const results = fullData?.["s:Envelope"]?.["s:Body"]?.RunSourceResponse?.RunSourceResult?.Results?.Results;
+    // Note: Use a standardized format to avoid frontend breakage
+    const refinedData = { 
+        Results: { Results: results } 
+    };
+
     return {
       statusCode: 200,
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(parsedData),
+      body: JSON.stringify(refinedData),
     };
   } catch (error) {
     console.error("❌ Mortgage API Error:", error.message);

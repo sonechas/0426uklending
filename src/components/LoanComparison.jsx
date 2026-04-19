@@ -102,7 +102,7 @@ const LoanComparison = ({ comparetText }) => {
   }, [loading]);  
 
   const transformApiData = (data) => {
-    const products = data?.["s:Envelope"]?.["s:Body"]?.RunSourceResponse?.RunSourceResult?.Results?.Results;
+    const products = data?.Results?.Results;
     if (!products) return [];
 
     const productsArray = Array.isArray(products) ? products : [products];
