@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const NODE_API_URL = "http://localhost:3001/api/mortgage";
-//export base URL for the API
-export const BASE_URL = "http://localhost:3001";
+const NODE_API_URL = "/.netlify/functions/mortgage";
+export const BASE_URL = window.location.origin;
 
 /**
  * Fetch mortgage data from Node.js server with progress tracking.

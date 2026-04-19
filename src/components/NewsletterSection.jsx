@@ -5,10 +5,7 @@ const NewsletterSection = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const API_URL =
-    process.env.NODE_ENV === "production"
-      ? "https://lendingcompany.co.uk" // 🔹 Change this to your actual domain
-      : "http://localhost:5000";
+  const API_URL = ""; // Relative to the domain
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -6,6 +6,32 @@
   CI = "false"
 
 [[redirects]]
+  from = "/api/mortgage"
+  to = "/.netlify/functions/mortgage"
+  status = 200
+
+[[redirects]]
+  from = "/subscribe"
+  to = "/.netlify/functions/submit"
+  status = 200
+
+[[redirects]]
+  from = "/submit-*"
+  to = "/.netlify/functions/submit"
+  status = 200
+
+[[redirects]]
+  from = "/first-time-buyers"
+  to = "/.netlify/functions/submit"
+  status = 200
+
+[[redirects]]
+  from = "/commercial-mortgages"
+  to = "/.netlify/functions/submit"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
