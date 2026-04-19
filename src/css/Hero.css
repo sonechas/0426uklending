@@ -1,0 +1,115 @@
+.hero-slider-wrapper {
+    overflow: hidden;
+}
+.banner {
+    /* background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.859) 10%, rgba(0, 0, 0, 0.197) 100%), url(../assets/mainslider-img.webp) no-repeat top center; */
+    background-size: cover;
+    padding: 150px 0 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    min-height: 700px;
+    /* max-height: 700px; */
+    /* background-attachment: fixed !important; */
+}
+
+.banner-left {
+    max-width: 770px;
+}
+.banner-detail{
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    display: block;
+    margin: 20px 0;
+    color: #f3f3f3;
+    line-height: 1.5;
+    max-width: 620px;
+}
+.sub-heading {
+    color: #a2afd8;
+    font-size: 22px;
+    margin-top: 20px;
+    display: block;
+}
+.banner-explore-text {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+.progam-bts-row {
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    gap: 20px;
+    max-width: 90%;
+    margin-top: 30px;
+    justify-content: center; /* Centers grid items */
+}
+.progam-bts-row .secondry-btn {
+    text-align: left;
+    position: relative;
+    /* Disable the global fill-on-hover ::before for these buttons */
+}
+.progam-bts-row .secondry-btn::before {
+    display: none;
+}
+.progam-bts-row .secondry-btn {
+    transition: box-shadow 0.3s var(--ease-spring);
+}
+.progam-bts-row .secondry-btn:hover {
+    color: #005ec4;
+    animation: heroRock 0.5s var(--ease-spring);
+    box-shadow: 4px 6px 18px rgba(0, 94, 196, 0.18);
+}
+
+/* ── Hero button rock ─────────────────────────────────── */
+@keyframes heroRock {
+    0%   { transform: rotate(0deg);    }
+    20%  { transform: rotate(-3deg) translateY(-2px); }
+    40%  { transform: rotate(3deg)  translateY(-2px); }
+    60%  { transform: rotate(-2deg) translateY(-1px); }
+    80%  { transform: rotate(2deg)  translateY(-1px); }
+    100% { transform: rotate(0deg);    }
+}
+.progam-bts-row svg {
+    margin-bottom: -4px;
+    position: absolute;
+    right: 30px;
+    font-size: 16px;
+}
+
+@media screen  and (max-width:1280px) {
+    .sub-heading {
+        font-size: 20px;
+        margin-top: 16px;
+    }
+    .progam-bts-row svg {
+        margin-bottom: -2px;
+        right: 10px;
+    }
+    /* .progam-bts-row {
+        grid-template-columns: 1fr 0.7fr 1fr 1fr;
+    } */
+    
+  }
+
+@media screen  and (max-width:520px) {
+    .progam-bts-row {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        gap: 10px;
+    }
+    .banner {
+        max-height: max-content;
+        min-height: max-content;
+    }
+    .sub-heading {
+        font-size: 17px;
+        color: #fff;
+    }
+    .banner-detail {
+        font-size: 16px;
+    }
+    
+}

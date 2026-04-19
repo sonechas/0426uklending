@@ -1,0 +1,255 @@
+/* =========================================================
+   Mega Dropdown — UK Lending
+   Full-width panel, reference-style grid layout
+   Brand: #005ec4 / #091b33 / Roboto
+   ========================================================= */
+
+/* ── Trigger ────────────────────────────────────────────── */
+.mega-dropdown {
+  position: static;
+  display: inline-block;
+}
+
+.mega-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #091b33;
+  transition: color var(--transition-base);
+  outline: none;
+  white-space: nowrap;
+}
+
+.mega-trigger:hover,
+.mega-trigger--open {
+  color: #005ec4;
+}
+
+.mega-trigger__caret {
+  font-size: 12px;
+  transition: transform var(--transition-base);
+}
+
+.mega-trigger__caret--up {
+  transform: rotate(180deg);
+}
+
+/* ── Full-width panel ───────────────────────────────────── */
+.mega-panel {
+  /* Escape out of any positioned ancestor to hug the full viewport width */
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* top is set dynamically via inline style in DropdownMenu.jsx */
+  z-index: 999;
+  background: #fffafaca;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: none;
+
+  animation: megaSlideDown 0.22s var(--ease-spring) both;
+}
+
+.mega-panel--closing {
+  animation: megaSlideUp 0.18s ease-in both;
+  pointer-events: none;
+}
+
+@keyframes megaSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes megaSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* Inner content width matches .container */
+.mega-panel__inner {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 0 24px;
+}
+
+/* ── Section heading ────────────────────────────────────── */
+.mega-panel__heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #091b33;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ── 3-column service grid ──────────────────────────────── */
+.mega-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mega-grid__item {
+  flex: 1 1 calc(33.333%);
+  min-width: 200px;
+}
+
+/* ── Individual link card ───────────────────────────────── */
+.mega-grid__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px 16px 16px;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+  border-radius: 0;
+}
+
+.mega-grid__link:hover {
+  background: #f8faff;
+}
+
+.mega-grid__link:hover .mega-grid__name {
+  color: #005ec4;
+}
+
+.mega-grid__link:hover .mega-grid__arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* ── Icon box ───────────────────────────────────────────── */
+.mega-grid__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mega-grid__icon {
+  font-size: 20px;
+}
+
+/* ── Text block ─────────────────────────────────────────── */
+.mega-grid__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mega-grid__name {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #091b33;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mega-grid__desc {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #6b7a99;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ── Chevron arrow ──────────────────────────────────────── */
+.mega-grid__arrow {
+  font-size: 11px;
+  color: #005ec4;
+  opacity: 0;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+/* ── Responsive — tablet ────────────────────────────────── */
+@media screen and (max-width: 992px) {
+  .mega-trigger {
+    font-size: 16px;
+  }
+
+  .mega-grid {
+    flex-wrap: wrap;
+  }
+
+  .mega-grid__item {
+    flex: 1 1 calc(50%);
+  }
+}
+
+/* ── Responsive — mobile ────────────────────────────────── */
+@media screen and (max-width: 768px) {
+  .mega-trigger {
+    font-size: 18px;
+    padding: 15px 30px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .mega-panel {
+    position: static;
+    border: none;
+    box-shadow: none;
+    animation: none;
+  }
+
+  .mega-panel__inner {
+    width: 100%;
+    padding: 12px 30px 16px;
+  }
+
+  .mega-panel__heading {
+    display: none;
+  }
+
+  .mega-grid {
+    flex-direction: column;
+  }
+
+  .mega-grid__item {
+    flex: 1 1 100%;
+  }
+
+  .mega-grid__link {
+    padding: 12px 0;
+  }
+
+  .mega-grid__arrow {
+    opacity: 1;
+  }
+}

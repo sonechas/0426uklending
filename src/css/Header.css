@@ -1,0 +1,247 @@
+.top-header {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: rgb(0, 0, 0);
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 0;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#rotating-text {
+    transition: opacity 1.5s ease-in-out;
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.ticker-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    transition: transform 0.5s ease;
+}
+
+@keyframes ticker-scroll {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.header {
+    position: fixed;
+    z-index: 10;
+    top: 25px;
+    left: 0;
+    right: 0;
+    padding: 15px 0;
+    transition: background var(--transition-slow), box-shadow var(--transition-slow);
+    background: #fffafaca;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 32px; /* Reduced from 40px */
+    width: auto;
+    display: block;
+}
+
+.header .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle-btn{
+    display: none;
+}
+nav {
+    max-width: 600px;
+    width: auto;
+    flex-grow: 1;
+}
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.nav-link-item {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 1;
+    transition: color var(--transition-base);
+    color: #091b33;
+}
+.nav-link-item:hover {
+    color: #005ec4;
+}
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+.btn-wrapper {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 1280px) {
+    .logo {
+        font-size: 22px;
+    }
+    nav {
+        max-width: 360px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .logo {
+        font-size: 18px;
+    }
+    .nav-link-item {
+        font-size: 16px;
+    }
+    nav {
+        max-width: 320px;
+    }
+    nav ul {
+        align-items: center;
+    }
+    /* dropdown-trigger font-size handled in DropdownMenu.css */
+}
+@media screen and (max-width: 768px) {
+    .btn-wrapper.dmb {
+        display: none;
+    }
+    .header {
+        padding: 25px 0;
+        background: #ffffffac;
+    }
+    nav {
+        position: fixed;
+        top: 68px;
+        right: -100%;
+        width: 100%;
+        max-width: unset;
+        height: calc(100vh - 68px);
+        background: #ffffff;
+        text-align: left;
+        transition: right var(--transition-slow);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Changed to flex-start */
+        padding: 20px 0 10px;
+    }
+    nav ul {
+        flex-direction: column;
+        justify-content: flex-start; /* Changed to flex-start */
+        align-items: flex-start;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+    }
+    .header ul li .nav-link-item {
+        padding: 15px 30px;
+        font-size: 18px;
+        display: block;
+        width: 100%;
+    }
+    .header.top ul li .nav-link-item {
+        padding: 15px 30px;
+        font-size: 18px;
+        display: block;
+        width: 100%;
+    }
+    .get-started-btn {
+        display: inline-block;
+        font-size: 16px;
+        padding: 12px 24px;
+        text-align: center;
+        margin: 20px 30px 0; /* Added margin-top and horizontal margins */
+        background: #005ec4;
+        color: white;
+        border-radius: 5px;
+        transition: background var(--transition-base);
+    }
+    .get-started-btn:hover {
+        background: #003c82;
+    }
+    .toggle-btn {
+        position: relative;
+        width: 31px;
+        height: 3px;
+        background: #005ec4;
+        flex-shrink: 0;
+        display: block;
+    }
+    .toggle-btn::before,
+    .toggle-btn::after {
+        position: absolute;
+        content: "";
+        height: 3px;
+        display: block;
+        background: #005ec4;
+        left: 0;
+        right: 0;
+        transition: all var(--transition-base);
+    }
+    .toggle-btn::before {
+        bottom: 8px;
+    }
+    .toggle-btn::after {
+        top: 8px;
+    }
+    .toggle-open {
+        background: transparent;
+    }
+    .toggle-open::before,
+    .toggle-open::after {
+        content: "";
+        background: #005ec4;
+        display: block;
+        position: absolute;
+        top: -4px;
+        transition: all var(--transition-base);
+    }
+    .toggle-open::before {
+        transform: rotate(-45deg);
+    }
+    .toggle-open::after {
+        transform: rotate(45deg);
+    }
+    .nav-show {
+        right: 0;
+        transition: right var(--transition-slow);
+    }
+    /* .dropdown mobile layout handled in DropdownMenu.css */
+    
+}

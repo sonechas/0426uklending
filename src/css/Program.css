@@ -1,0 +1,152 @@
+.programs {
+    padding: 100px 0;
+  }
+  
+  .programs .secondry-heading {
+    text-align: center;
+  }
+  
+  .programs .default-text {
+    text-align: center;
+    display: block;
+    max-width: 100%;
+    font-size: 20px;
+  }
+  
+  .program-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Fixed to 4 columns */
+    gap: 12px;
+    justify-items: center;
+    align-items: stretch;
+    margin-top: 60px;
+  }
+  
+  .program-card.placeholder {
+    display: none; /* Changed visibility: hidden to display: none */
+  }
+  
+  .program-card {
+    background: #fff;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%; /* Ensure cards take full width of their grid cell */
+  }
+  
+  .program-img-wrapper {
+    position: relative;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .program-img-wrapper::before,
+  .program-img-wrapper::after {
+    content: "";
+    position: absolute;
+    background: #091b33;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 1;
+    transition: transform 0.8s ease-in-out;
+  }
+  
+  .program-img-wrapper::before {
+    background: #005fc49d;
+    transform: rotate(45deg);
+  }
+  
+  .program-img-wrapper::after {
+    background: #005fc4b4;
+    transform: rotate(-70deg);
+    z-index: 2;
+  }
+  
+  .program-icon {
+    font-size: 40px;
+    color: #f7f7f7;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+  }
+  
+  .program-card-body {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .program-title {
+    font-family: 'Roboto';
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    font-weight: 700;
+    color: #005ec4;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .program-description {
+    font-family: 'Roboto';
+    text-align: center;
+    font-size: 16px;
+    display: block;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  
+  .programs .pre-header {
+    display: block;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 1280px) {
+    .programs .default-text {
+      font-size: 18px;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .program-row {
+      grid-template-columns: 1fr 1fr; /* Two columns on medium screens */
+      margin-top: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .programs {
+      padding: 50px 0;
+    }
+  
+    .programs .default-text {
+      font-size: 16px;
+      margin: 15px 0;
+    }
+  
+    .program-row {
+      grid-template-columns: 1fr; /* Single column layout for mobile */
+    }
+  }
+  
+  @media screen and (max-width: 520px) {
+    .program-row {
+      grid-template-columns: 1fr;
+      margin-top: 20px;
+      gap: 20px;
+    }
+  }

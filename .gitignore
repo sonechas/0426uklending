@@ -1,0 +1,11 @@
+node_modules/
+build/
+win_build/
+bin/
+obj/
+dist/
+.DS_Store
+__MACOSX/
+.env
+*.log
+.vscode/

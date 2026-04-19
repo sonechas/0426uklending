@@ -1,0 +1,139 @@
+footer {
+    background: #091b33;
+}
+.footer-top {
+    padding: 80px 0;
+    border-bottom: 1px solid #afaaaa;
+}
+footer .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+footer .logo-img {
+    height: 42px; /* Slightly reduced for a sleeker look */
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1); /* Make it white if it's a dark logo, or adjust as needed */
+}
+.link-list {
+    max-width: 115px;
+    width: 100%;
+}
+.link-list.program-list {
+    max-width: 200px;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+}
+footer h4 {
+    font-size: 22px;
+    margin: 0 0 35px;
+    color: #fff;
+}
+.footer-links li {
+    margin: 15px 0;
+}
+.footer-links li a {
+    font-size: 18px;
+    color: #d3d3d3;
+    font-weight: 500;
+}
+.footer-links li a:hover {
+    color: #a8a7a3;
+}
+footer .icon {
+    font-size: 16px;
+    width: 20px;
+    margin-right: 10px;
+}
+.connect-list a, .social-list a {
+    display: flex;
+}
+.connect-list {
+    max-width: 25%;
+}
+.footer-btm {
+    padding: 10px 0;
+}
+.footer-btm span {
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+    display: block;
+}
+@media screen and (max-width: 992px) {
+    .footer-links li a {
+        font-size: 14px;
+    }
+    footer .icon {
+        font-size: 14px;
+        width: 15px;
+        margin-right: 7px;
+    }
+    .link-list {
+        max-width: 25%;
+    }
+    .join-col h4 {
+        font-size: 24px;
+    }
+    .footer-btm {
+        padding: 15px 0;
+    }
+    footer .logo {
+        margin-bottom: 40px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer-top {
+        padding: 50px 0 40px;
+        border-bottom: 1px solid #afaaaa;
+    }
+    footer .logo {
+        text-align: center;
+        font-size: 24px;
+    }
+    .join-col h4 {
+        text-align: center;
+    }
+    .footer-top .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .footer-content {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 20px;
+        align-items: center;
+    }
+    .connect-list {
+        max-width: 100%;
+    }
+    .link-list {
+        max-width: 100%;
+        width: 100%;
+    }
+    .footer-content h4 {
+        text-align: center;
+        font-size: 19px;
+        margin: 0 0 20px;
+    }
+    .footer-links li a {
+        text-align: center;
+        justify-content: center;
+    }
+    .footer-links li a {
+        font-size: 16px;
+    }
+    .join-col {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}

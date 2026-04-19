@@ -1,0 +1,60 @@
+/* Quality Section */
+.quality {
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.quality .container {
+  max-width: 990px;
+  margin: 0 auto;
+}
+
+.quality .pre-header {
+  text-align: center;
+  display: block;
+  color: #f3f3f3;
+}
+
+.quality .secondry-heading {
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.quality .default-text {
+  text-align: center;
+  max-width: 100%;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.quality .secondry-btn {
+  margin: 0 auto;
+  display: block;
+  max-width: 150px;
+}
+
+/* Remove background-attachment: fixed */
+@media screen and (max-width: 768px) {
+  .quality {
+      padding: 50px 0;
+  }
+
+  .quality .secondry-heading {
+      font-size: 24px;
+      margin: 10px 0;
+  }
+
+  .quality .pre-header {
+      font-size: 15px;
+  }
+
+  .quality .default-text {
+      font-size: 16px;
+      margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,44 @@
+.input-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-prefix {
+    margin-right: 5px;
+  }
+  .dual-field-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 1rem;
+  }
+  
+  .dual-field-row label {
+    min-width: 200px;
+  }
+.aligned-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 1rem;
+}
+
+.grid-left {
+  flex: 1;
+  min-width: 260px;
+}
+
+.grid-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 260px;
+}
+
+/* Hide steps section on small screens */
+@media (max-width: 767px) {
+  .steps {
+    display: none;
+  }
+}

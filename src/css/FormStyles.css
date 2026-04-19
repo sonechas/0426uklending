@@ -1,0 +1,474 @@
+/* =========================================================
+   Request Callback Form — UK Lending brand palette
+   Brand: #005ec4 (blue) / #091b33 (navy) / Roboto
+   ========================================================= */
+
+.form-section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 40px;
+  gap: 80px;
+  background-color: transparent;
+}
+
+/* ── Left info side ────────────────────────────────────── */
+.form-info-side {
+  flex: 1;
+  position: sticky;
+  top: 150px;
+}
+
+.ultra-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(40px, 6vw, 75px);
+  font-weight: 900;
+  line-height: 0.9;
+  color: #091b33;
+  margin-bottom: 30px;
+  letter-spacing: -2px;
+}
+
+/* Blue accent on the key word */
+.ultra-heading span {
+  color: #005ec4;
+}
+
+.form-desc-large {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #4a5568;
+  max-width: 450px;
+  margin-bottom: 50px;
+}
+
+.contact-details-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #005ec4;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #091b33;
+}
+
+/* ── Form card ─────────────────────────────────────────── */
+.form-box-modern {
+  flex: 1.2;
+  background: linear-gradient(145deg, #f0f5ff 0%, #ffffff 60%);
+  padding: 60px;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 94, 196, 0.12);
+  box-shadow: 0 8px 40px rgba(0, 94, 196, 0.08);
+}
+
+.modern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #091b33;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Blue rule after the section label */
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 94, 196, 0.15);
+}
+
+/* ── Chip selector buttons ─────────────────────────────── */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip-btn {
+  background: #fff;
+  border: 1.5px solid #d1dff5;
+  padding: 11px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: border-color var(--transition-base), color var(--transition-base),
+              background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.chip-btn:hover {
+  border-color: #005ec4;
+  color: #005ec4;
+  background: #f0f5ff;
+}
+
+.chip-btn.active {
+  background: #005ec4;
+  border-color: #005ec4;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 94, 196, 0.3);
+  padding: 11px 28px;
+}
+
+.chip-btn.small {
+  padding: 8px 18px;
+}
+
+.chip-btn.small.active {
+  padding: 8px 24px;
+}
+
+/* ── Input grid ────────────────────────────────────────── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.form-group-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group-modern.full-width {
+  grid-column: span 2;
+}
+
+.modern-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #d1dff5;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #091b33;
+  outline: none;
+  transition: border-color var(--transition-base);
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modern-input::placeholder {
+  color: #9aabcb;
+  font-weight: 400;
+}
+
+.modern-input:focus {
+  border-color: #005ec4;
+}
+
+/* Style the date & select inputs to match */
+.modern-input[type="date"],
+.modern-input select,
+select.modern-input {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-helper {
+  font-size: 11px;
+  font-weight: 700;
+  color: #9aabcb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-subtext {
+  font-size: 14px;
+  color: #6b7a99;
+  margin: -4px 0 0;
+}
+
+/* ── Submit button ─────────────────────────────────────── */
+.modern-submit-btn {
+  position: relative;
+  overflow: hidden;
+  background: #005ec4;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-base), box-shadow var(--transition-base),
+              letter-spacing var(--transition-slow), transform var(--transition-base);
+  margin-top: 10px;
+  width: fit-content;
+  min-width: 240px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modern-submit-btn:hover {
+  background: #091b33;
+  box-shadow: 0 8px 28px rgba(0, 94, 196, 0.35);
+  letter-spacing: 3.5px;
+}
+
+.modern-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* ── Submission status message ─────────────────────────── */
+.submission-message {
+  font-size: 15px;
+  font-weight: 600;
+  color: #091b33;
+  background: #eef5ff;
+  border-left: 4px solid #005ec4;
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* ── Legal text ────────────────────────────────────────── */
+.legal-statement {
+  margin-top: 36px;
+  font-size: 12px;
+  color: #9aabcb;
+  line-height: 1.5;
+  max-width: 420px;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .form-section-wrapper {
+    flex-direction: column;
+    margin: 60px auto;
+    gap: 60px;
+  }
+  .form-info-side {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-section-wrapper {
+    padding: 0 20px;
+    margin: 40px auto;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group-modern.full-width {
+    grid-column: span 1;
+  }
+  .form-box-modern {
+    padding: 30px 24px;
+    border-radius: 16px;
+  }
+  .ultra-heading {
+    font-size: 45px;
+  }
+  .modern-submit-btn {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* =========================================================
+   Fixed Rate Reminder Form — UK Lending brand palette
+   ========================================================= */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 40px;
+  background-color: transparent;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 620px;
+  background: linear-gradient(145deg, #f0f5ff 0%, #ffffff 60%);
+  border: 1px solid rgba(0, 94, 196, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 8px 40px rgba(0, 94, 196, 0.08);
+  padding: 56px 60px;
+}
+
+.form-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: #091b33;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.form-subtext {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 40px;
+  border-left: 3px solid #005ec4;
+  padding-left: 14px;
+}
+
+/* ── Form rows ─────────────────────────────────────────── */
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #005ec4;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-group input,
+.form-group select {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #d1dff5;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #091b33;
+  outline: none;
+  transition: border-color var(--transition-base);
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input::placeholder {
+  color: #9aabcb;
+  font-weight: 400;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #005ec4;
+}
+
+/* Focus indicator line animation */
+.form-group::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #005ec4;
+  transition: width var(--transition-slow) var(--ease-spring);
+}
+
+.form-group:focus-within::after {
+  width: 100%;
+}
+
+/* ── Error message ─────────────────────────────────────── */
+.form-group .error-message {
+  font-size: 12px;
+  color: #e53e3e;
+  font-weight: 600;
+  margin-top: 6px;
+  background: #fff5f5;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border-left: 3px solid #e53e3e;
+  max-width: 100%;
+}
+
+/* ── Submit button ─────────────────────────────────────── */
+.submit-button {
+  position: relative;
+  overflow: hidden;
+  background: #005ec4;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-base), box-shadow var(--transition-base),
+              letter-spacing var(--transition-slow), transform var(--transition-base);
+  margin-top: 8px;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.submit-button:hover {
+  background: #091b33;
+  box-shadow: 0 8px 28px rgba(0, 94, 196, 0.35);
+  letter-spacing: 3.5px;
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 50px 20px;
+  }
+  .form-box {
+    padding: 36px 28px;
+    border-radius: 16px;
+  }
+  .form-title {
+    font-size: 26px;
+  }
+}
