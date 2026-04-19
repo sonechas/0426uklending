@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const NODE_API_URL = "/.netlify/functions/mortgage";
+const NODE_API_URL = "/api/mortgage";
 export const BASE_URL = window.location.origin;
 
 /**
